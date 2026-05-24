@@ -1,0 +1,149 @@
+/* ============================================================================
+   CENTURY ADVANTAGE — COLORS & TYPOGRAPHY
+   Single source of truth. The four named brand colors come straight from the
+   Brand ID guide: Legacy · Ember · Heritage · Mist.
+   ============================================================================ */
+
+@font-face {
+  font-family: 'Stolzl';
+  src: url('/fonts/Stolzl-Thin.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('/fonts/Stolzl-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('/fonts/Stolzl-Book.otf') format('opentype');
+  font-weight: 350; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('/fonts/Stolzl-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('/fonts/Stolzl-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('/fonts/Stolzl-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Light.ttf') format('truetype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Book.ttf') format('truetype');
+  font-weight: 350; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Heavy.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Black.ttf') format('truetype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ===== THE FOUR NAMED BRAND COLOURS ===== */
+  --ca-legacy:       #6440A2;
+  --ca-legacy-deep:  #4A2D7B;
+  --ca-legacy-soft:  #EDE7F7;
+  --ca-legacy-ink:   #2A1A4D;
+
+  --ca-ember:        #F9685B;
+  --ca-ember-deep:   #E04F44;
+  --ca-ember-soft:   #FDE3E0;
+
+  --ca-heritage:     #FCFFC8;
+  --ca-heritage-deep:#F3F88C;
+  --ca-heritage-soft:#FEFFE8;
+
+  --ca-mist:         #A1D2F2;
+  --ca-mist-deep:    #5FA8D6;
+  --ca-mist-soft:    #E5F2FB;
+
+  --ca-ink:    #1A1A1A;
+  --ca-paper:  #FFFFFF;
+
+  --ca-n-50:  #FAFAF8;
+  --ca-n-100: #F4F2EE;
+  --ca-n-200: #E8E5DE;
+  --ca-n-300: #D2CEC4;
+  --ca-n-400: #A6A199;
+  --ca-n-500: #75716A;
+  --ca-n-600: #54514B;
+  --ca-n-700: #34322E;
+  --ca-n-800: #1F1E1B;
+  --ca-n-900: #0F0E0C;
+
+  --fg-1: var(--ca-ink);
+  --fg-2: var(--ca-n-600);
+  --fg-3: var(--ca-n-400);
+  --fg-on-legacy:   #FFFFFF;
+  --fg-on-ember:    #FFFFFF;
+  --fg-on-heritage: var(--ca-legacy-ink);
+  --fg-on-mist:     var(--ca-legacy-ink);
+  --fg-on-ink:      #FFFFFF;
+
+  --bg-1: var(--ca-paper);
+  --bg-2: var(--ca-n-50);
+  --bg-3: var(--ca-n-100);
+  --bg-warm: var(--ca-heritage-soft);
+  --bg-cool: var(--ca-mist-soft);
+  --bg-ink:  var(--ca-ink);
+
+  --border-1: var(--ca-n-200);
+  --border-2: var(--ca-n-300);
+  --border-focus: var(--ca-ember);
+
+  --status-success: #2E7D5C;
+  --status-warning: #C58A1B;
+  --status-danger:  #C84034;
+  --status-info:    var(--ca-mist-deep);
+
+  --font-display: 'Stolzl', 'Futura', 'Avenir Next', -apple-system, sans-serif;
+  --font-body:    'Avenir', 'Avenir Next', 'Inter', -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 10px;
+  --r-xl: 16px;
+  --r-pill: 999px;
+
+  --shadow-1: 0 1px 2px rgba(42, 26, 77, 0.05), 0 1px 1px rgba(42, 26, 77, 0.04);
+  --shadow-2: 0 2px 8px rgba(42, 26, 77, 0.07), 0 1px 2px rgba(42, 26, 77, 0.05);
+  --shadow-3: 0 8px 24px rgba(42, 26, 77, 0.10), 0 2px 6px rgba(42, 26, 77, 0.05);
+  --shadow-4: 0 20px 48px rgba(42, 26, 77, 0.14), 0 6px 12px rgba(42, 26, 77, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(249, 104, 91, 0.22);
+
+  --sp-0:0; --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+  --sp-5:20px; --sp-6:24px; --sp-8:32px; --sp-10:40px; --sp-12:48px;
+  --sp-16:64px; --sp-20:80px; --sp-24:96px;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   420ms;
+}
