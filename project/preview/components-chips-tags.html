@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"><style>
+  .chip { display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;font-family:var(--font-display);font-size:12px;font-weight:500;letter-spacing:.04em; }
+  .chip-purple { background:var(--ca-purple-soft);color:var(--ca-purple);border:1px solid rgba(104,72,152,.25); }
+  .chip-coral { background:var(--ca-coral-soft);color:var(--ca-coral-deep);border:1px solid rgba(240,104,96,.3); }
+  .tag { display:inline-flex;align-items:center;padding:5px 12px;border-radius:4px;font-family:var(--font-display);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase; }
+  .tag-rental { background:var(--ca-purple);color:#fff; }
+  .tag-resale { background:var(--ca-coral);color:#fff; }
+  .tag-furnishing { background:rgba(255,255,255,.85);color:var(--ca-ink);border:1px solid var(--border-2);backdrop-filter:blur(4px); }
+</style></head><body>
+<div class="col" style="gap:18px;">
+  <div class="col" style="gap:8px;">
+    <span class="t-caption" style="color:var(--fg-3);text-transform:uppercase;letter-spacing:.12em;">Property type — strong tags</span>
+    <div class="row" style="gap:8px;">
+      <span class="tag tag-rental">Rental</span>
+      <span class="tag tag-resale">Resale</span>
+      <span class="tag tag-furnishing">Fully Furnished</span>
+    </div>
+  </div>
+  <div class="col" style="gap:8px;">
+    <span class="t-caption" style="color:var(--fg-3);text-transform:uppercase;letter-spacing:.12em;">Facility chips — soft, neutral pill</span>
+    <div class="row" style="gap:8px;flex-wrap:wrap;">
+      <span class="chip chip-purple">Clubhouse</span>
+      <span class="chip chip-purple">Swimming Pool</span>
+      <span class="chip chip-purple">Concierge</span>
+      <span class="chip chip-coral">Pet-Friendly</span>
+      <span class="chip chip-coral">Power Backup</span>
+    </div>
+  </div>
+</div>
+</body></html>

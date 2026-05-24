@@ -1,0 +1,261 @@
+/* ============================================================================
+   CENTURY ADVANTAGE — COLORS & TYPOGRAPHY
+   Single source of truth. The four named brand colors come straight from the
+   Brand ID guide: Legacy · Ember · Heritage · Mist.
+   ============================================================================ */
+
+/* -------------------- FONTS -------------------- */
+
+@font-face {
+  font-family: 'Stolzl';
+  src: url('./fonts/Stolzl-Thin.otf') format('opentype');
+  font-weight: 100; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('./fonts/Stolzl-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('./fonts/Stolzl-Book.otf') format('opentype');
+  font-weight: 350; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('./fonts/Stolzl-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('./fonts/Stolzl-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Stolzl';
+  src: url('./fonts/Stolzl-Bold.otf') format('opentype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('./fonts/Avenir-Light.ttf') format('truetype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('./fonts/Avenir-Book.ttf') format('truetype');
+  font-weight: 350; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('./fonts/Avenir-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('./fonts/Avenir-Heavy.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('./fonts/Avenir-Black.ttf') format('truetype');
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+
+/* -------------------- TOKENS -------------------- */
+
+:root {
+  /* ===== THE FOUR NAMED BRAND COLOURS ===== */
+
+  /* LEGACY — primary purple. Dominant brand surface, sections, footers. */
+  --ca-legacy:       #6440A2;
+  --ca-legacy-deep:  #4A2D7B;   /* Pressed / contrast variant */
+  --ca-legacy-soft:  #EDE7F7;   /* Tint for chips, soft surfaces */
+  --ca-legacy-ink:   #2A1A4D;   /* Heavy deep tint for type on light */
+
+  /* EMBER — coral-orange accent. The /A mnemonic. CTAs. Highlights. */
+  --ca-ember:        #F9685B;
+  --ca-ember-deep:   #E04F44;   /* Pressed / contrast variant */
+  --ca-ember-soft:   #FDE3E0;   /* Tint for chips */
+
+  /* HERITAGE — soft yellow. Warmth. Optimistic neutral background. */
+  --ca-heritage:     #FCFFC8;
+  --ca-heritage-deep:#F3F88C;   /* Slightly punchier variant for tags / chips */
+  --ca-heritage-soft:#FEFFE8;   /* Whisper tint */
+
+  /* MIST — sky blue. Calm, breathing space, supporting element. */
+  --ca-mist:         #A1D2F2;
+  --ca-mist-deep:    #5FA8D6;   /* Punchier variant for icons / chips */
+  --ca-mist-soft:    #E5F2FB;   /* Whisper tint */
+
+  /* ===== INK & PAPER ===== */
+  --ca-ink:    #1A1A1A;    /* "Century" wordmark · primary text on light */
+  --ca-paper:  #FFFFFF;
+
+  /* ===== NEUTRALS (warm-cool blend with a hint of legacy) ===== */
+  --ca-n-50:  #FAFAF8;
+  --ca-n-100: #F4F2EE;
+  --ca-n-200: #E8E5DE;
+  --ca-n-300: #D2CEC4;
+  --ca-n-400: #A6A199;
+  --ca-n-500: #75716A;
+  --ca-n-600: #54514B;
+  --ca-n-700: #34322E;
+  --ca-n-800: #1F1E1B;
+  --ca-n-900: #0F0E0C;
+
+  /* ===== SEMANTIC FOREGROUND ===== */
+  --fg-1: var(--ca-ink);
+  --fg-2: var(--ca-n-600);
+  --fg-3: var(--ca-n-400);
+  --fg-on-legacy:   #FFFFFF;
+  --fg-on-ember:    #FFFFFF;
+  --fg-on-heritage: var(--ca-legacy-ink);
+  --fg-on-mist:     var(--ca-legacy-ink);
+  --fg-on-ink:      #FFFFFF;
+
+  /* ===== SEMANTIC BACKGROUND ===== */
+  --bg-1: var(--ca-paper);
+  --bg-2: var(--ca-n-50);
+  --bg-3: var(--ca-n-100);
+  --bg-warm: var(--ca-heritage-soft);   /* For warm neutral panels */
+  --bg-cool: var(--ca-mist-soft);       /* For calm neutral panels */
+  --bg-ink:  var(--ca-ink);
+
+  /* ===== BORDERS ===== */
+  --border-1: var(--ca-n-200);
+  --border-2: var(--ca-n-300);
+  --border-focus: var(--ca-ember);
+
+  /* ===== STATUS ===== */
+  --status-success: #2E7D5C;
+  --status-warning: #C58A1B;
+  --status-danger:  #C84034;
+  --status-info:    var(--ca-mist-deep);
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-display: 'Stolzl', 'Futura', 'Avenir Next', -apple-system, sans-serif;
+  --font-body:    'Avenir', 'Avenir Next', 'Inter', -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --t-hero-size:    72px;   --t-hero-lh:    1.04;  --t-hero-tr:    -0.02em;  --t-hero-w:    500;
+  --t-display-size: 56px;   --t-display-lh: 1.08;  --t-display-tr: -0.015em; --t-display-w: 500;
+  --t-h1-size:      40px;   --t-h1-lh:      1.12;  --t-h1-tr:      -0.01em;  --t-h1-w:      500;
+  --t-h2-size:      28px;   --t-h2-lh:      1.2;   --t-h2-tr:      -0.005em; --t-h2-w:      500;
+  --t-h3-size:      20px;   --t-h3-lh:      1.3;   --t-h3-tr:       0;       --t-h3-w:      500;
+
+  --t-eyebrow-size: 12px;   --t-eyebrow-lh: 1.4;   --t-eyebrow-tr:  0.18em;  --t-eyebrow-w: 500;
+
+  --t-lead-size:    19px;   --t-lead-lh:    1.6;   --t-lead-w:    350;
+  --t-body-size:    16px;   --t-body-lh:    1.6;   --t-body-w:    400;
+  --t-small-size:   14px;   --t-small-lh:   1.55;  --t-small-w:   400;
+  --t-caption-size: 12px;   --t-caption-lh: 1.4;   --t-caption-w: 400;
+
+  --t-label-size:   13px;   --t-label-lh:   1.2;   --t-label-tr:   0.06em;   --t-label-w:   500;
+
+  /* ===== RADII ===== */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 10px;
+  --r-xl: 16px;
+  --r-pill: 999px;
+
+  /* ===== ELEVATION ===== */
+  --shadow-1: 0 1px 2px rgba(42, 26, 77, 0.05), 0 1px 1px rgba(42, 26, 77, 0.04);
+  --shadow-2: 0 2px 8px rgba(42, 26, 77, 0.07), 0 1px 2px rgba(42, 26, 77, 0.05);
+  --shadow-3: 0 8px 24px rgba(42, 26, 77, 0.10), 0 2px 6px rgba(42, 26, 77, 0.05);
+  --shadow-4: 0 20px 48px rgba(42, 26, 77, 0.14), 0 6px 12px rgba(42, 26, 77, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(249, 104, 91, 0.22);
+
+  /* ===== SPACING (4-base) ===== */
+  --sp-0:0; --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+  --sp-5:20px; --sp-6:24px; --sp-8:32px; --sp-10:40px; --sp-12:48px;
+  --sp-16:64px; --sp-20:80px; --sp-24:96px;
+
+  /* ===== MOTION ===== */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   420ms;
+}
+
+/* -------------------- SEMANTIC TYPE CLASSES -------------------- */
+
+.t-hero {
+  font-family: var(--font-display);
+  font-size: var(--t-hero-size); line-height: var(--t-hero-lh);
+  letter-spacing: var(--t-hero-tr); font-weight: var(--t-hero-w);
+  color: var(--fg-1);
+}
+.t-display {
+  font-family: var(--font-display);
+  font-size: var(--t-display-size); line-height: var(--t-display-lh);
+  letter-spacing: var(--t-display-tr); font-weight: var(--t-display-w);
+  color: var(--fg-1);
+}
+h1, .t-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-h1-size); line-height: var(--t-h1-lh);
+  letter-spacing: var(--t-h1-tr); font-weight: var(--t-h1-w);
+  color: var(--fg-1);
+}
+h2, .t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-h2-size); line-height: var(--t-h2-lh);
+  letter-spacing: var(--t-h2-tr); font-weight: var(--t-h2-w);
+  color: var(--fg-1);
+}
+h3, .t-h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-h3-size); line-height: var(--t-h3-lh);
+  font-weight: var(--t-h3-w);
+  color: var(--fg-1);
+}
+.t-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--t-eyebrow-size); line-height: var(--t-eyebrow-lh);
+  letter-spacing: var(--t-eyebrow-tr); font-weight: var(--t-eyebrow-w);
+  text-transform: uppercase;
+  color: var(--ca-ember);
+}
+.t-lead {
+  font-family: var(--font-body);
+  font-size: var(--t-lead-size); line-height: var(--t-lead-lh);
+  font-weight: var(--t-lead-w);
+  color: var(--fg-2);
+}
+p, .t-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body-size); line-height: var(--t-body-lh);
+  font-weight: var(--t-body-w);
+  color: var(--fg-2);
+}
+.t-small {
+  font-family: var(--font-body);
+  font-size: var(--t-small-size); line-height: var(--t-small-lh);
+  color: var(--fg-2);
+}
+.t-caption {
+  font-family: var(--font-body);
+  font-size: var(--t-caption-size); line-height: var(--t-caption-lh);
+  color: var(--fg-3);
+}
+.t-label {
+  font-family: var(--font-display);
+  font-size: var(--t-label-size); line-height: var(--t-label-lh);
+  letter-spacing: var(--t-label-tr); font-weight: var(--t-label-w);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+code, .t-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-3);
+  padding: 1px 6px;
+  border-radius: var(--r-sm);
+  color: var(--fg-1);
+}

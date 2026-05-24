@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Century Advantage — Premium Rental &amp; Resale</title>
+<link rel="icon" type="image/png" href="../../assets/logo/century-advantage-coral-black.png" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="mocks.js"></script>
+<script type="text/babel" src="Icon.jsx"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="PropertyCard.jsx"></script>
+<script type="text/babel" src="HomeHero.jsx"></script>
+<script type="text/babel" src="LeadForm.jsx"></script>
+<script type="text/babel" src="Listings.jsx"></script>
+<script type="text/babel" src="PropertyDetail.jsx"></script>
+<script type="text/babel" src="AIConsole.jsx"></script>
+
+<script type="text/babel">
+function App() {
+  const [route, setRoute] = React.useState({ page: 'home', params: {} });
+  const [filters, setFilters] = React.useState({});
+  const [aiOpen, setAIOpen] = React.useState(false);
+
+  const navigate = (page, params = {}) => {
+    if (page === 'listings') {
+      const newFilters = {};
+      if (params.type) newFilters.type = params.type;
+      if (params.location) newFilters.location = params.location;
+      setFilters(newFilters);
+    }
+    setRoute({ page, params });
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const openProperty = (id) => navigate('detail', { id });
+
+  return (
+    <>
+      <Header route={route.page} onNav={navigate}/>
+      <main className="ca-page">
+        {route.page === 'home' && (
+          <>
+            <HomeHero onNav={navigate}/>
+            <FeaturedSection listings={window.CA_MOCKS.listings} onOpen={openProperty} onNav={navigate}/>
+            <FiveCPromise/>
+            <HowItWorks/>
+            <MistOwnerBand onNav={navigate}/>
+            <TrustStrip/>
+          </>
+        )}
+        {route.page === 'listings' && (
+          <ListingsPage filters={filters} onChangeFilters={setFilters} onOpen={openProperty}/>
+        )}
+        {route.page === 'detail' && (
+          <PropertyDetail id={route.params.id} onBack={() => navigate('listings')}/>
+        )}
+        {(route.page === 'list-property' || route.page === 'about' || route.page === 'contact') && (
+          <section style={{padding:'120px 6%', maxWidth:760, margin:'0 auto', textAlign:'center'}}>
+            <span className="eyebrow">{
+              route.page === 'list-property' ? 'Owner Intake' :
+              route.page === 'about' ? 'Century Heritage' :
+              'Connect With Us'
+            }</span>
+            <h1 style={{fontFamily:'var(--font-display)', fontSize:48, fontWeight:500, letterSpacing:'-0.01em', margin:'16px 0 12px'}}>
+              {route.page === 'list-property' && <>List Your <span style={{color:'var(--ca-coral)'}}>Asset</span></>}
+              {route.page === 'about' && <>Fifty Years of <span style={{color:'var(--ca-coral)'}}>Bengaluru</span></>}
+              {route.page === 'contact' && <>Talk to an <span style={{color:'var(--ca-coral)'}}>Advisor</span></>}
+            </h1>
+            <span className="section-rule"/>
+            <p style={{marginTop:24, fontSize:17, color:'var(--fg-2)', lineHeight:1.6}}>
+              {route.page === 'list-property' && 'Submit your residence for inclusion in the Century Advantage portfolio. A relationship manager will reach out within 24 hours to begin verification.'}
+              {route.page === 'about' && 'From Century Park (1975) to today\u2019s landmark gated communities, Century Real Estate has helped shape the Bengaluru skyline. Century Advantage is its concierge for rental and resale.'}
+              {route.page === 'contact' && 'Reach the Century Advantage office on Kasturba Road. We respond within four hours on weekdays.'}
+            </p>
+            <div style={{marginTop:48, display:'flex', justifyContent:'center'}}>
+              <LeadForm compact/>
+            </div>
+          </section>
+        )}
+      </main>
+      <Footer/>
+      <AIConsole open={aiOpen} onOpen={()=>setAIOpen(true)} onClose={()=>setAIOpen(false)}/>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+
+</body>
+</html>

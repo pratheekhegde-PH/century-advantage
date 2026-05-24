@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head><body>
+<style>
+  @keyframes drift { 0%,100%{transform:translateX(0)} 50%{transform:translateX(110px)} }
+  .dot { width:36px;height:36px;border-radius:50%;background:var(--ca-coral); }
+  .lane { position:relative;height:36px;background:var(--bg-3);border-radius:18px;overflow:hidden; }
+  .lane-1 .dot { animation: drift 1.2s cubic-bezier(.4,0,.2,1) infinite; }
+  .lane-2 .dot { animation: drift 1.2s cubic-bezier(0,0,.2,1) infinite; background:var(--ca-purple); }
+  .lane-3 .dot { animation: drift 1.2s cubic-bezier(.4,0,1,1) infinite; background:var(--ca-ink); }
+</style>
+<div class="col" style="gap:14px;">
+  <span class="t-caption" style="color:var(--fg-3);text-transform:uppercase;letter-spacing:.12em;">Motion — quiet, never bouncy</span>
+  <div style="display:grid;grid-template-columns:130px 1fr;gap:14px 18px;align-items:center;">
+    <span style="font-family:var(--font-display);font-size:12px;font-weight:500;color:var(--fg-1);">Standard</span>
+    <div class="lane lane-1"><div class="dot"></div></div>
+    <span style="font-family:var(--font-display);font-size:12px;font-weight:500;color:var(--fg-1);">Entrance</span>
+    <div class="lane lane-2"><div class="dot"></div></div>
+    <span style="font-family:var(--font-display);font-size:12px;font-weight:500;color:var(--fg-1);">Exit</span>
+    <div class="lane lane-3"><div class="dot"></div></div>
+  </div>
+  <div style="display:flex;gap:14px;font-family:var(--font-mono);font-size:11px;color:var(--fg-3);">
+    <span>fast 140ms</span><span>·</span><span>base 220ms</span><span>·</span><span>slow 420ms</span>
+  </div>
+</div>
+</body></html>

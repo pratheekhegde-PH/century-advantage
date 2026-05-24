@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"><style>
+  .pcard { width:340px;background:#fff;border:1px solid var(--border-1);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-2);font-family:var(--font-body); }
+  .pcard-img { height:180px;background:linear-gradient(135deg,#d4b196 0%,#a08469 60%,#704f3e 100%);position:relative; }
+  .pcard-tags { position:absolute;top:12px;left:12px;display:flex;gap:6px; }
+  .pcard-tag { padding:4px 10px;border-radius:4px;font-family:var(--font-display);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff; }
+  .tag-rental { background:var(--ca-purple); }
+  .tag-resale { background:var(--ca-coral); }
+  .tag-furn { background:rgba(255,255,255,.92);color:var(--ca-ink);backdrop-filter:blur(4px); }
+  .pcard-body { padding:18px 20px; }
+  .pcard-loc { display:flex;align-items:center;gap:6px;font-family:var(--font-display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ca-coral);font-weight:500; }
+  .pcard-title { font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--fg-1);margin:6px 0 12px; }
+  .pcard-meta { display:flex;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--border-1);font-size:13px;color:var(--fg-2); }
+  .pcard-meta strong { color:var(--fg-1);font-weight:500; }
+  .pcard-foot { display:flex;justify-content:space-between;align-items:center;padding-top:12px; }
+  .pcard-price { font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ca-coral); }
+  .pcard-price small { display:block;font-family:var(--font-body);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);font-weight:400; }
+  .pcard-cta { font-family:var(--font-display);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ca-coral);border:1px solid var(--ca-coral);padding:6px 14px;border-radius:4px; }
+</style></head><body>
+<div class="pcard">
+  <div class="pcard-img">
+    <div class="pcard-tags">
+      <span class="pcard-tag tag-resale">Resale</span>
+      <span class="pcard-tag tag-furn">Semi Furnished</span>
+    </div>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-loc">◐ Hebbal · Bengaluru</div>
+    <div class="pcard-title">Century Ethos Penthouse</div>
+    <div class="pcard-meta"><span><strong>3</strong> BHK</span><span><strong>2,140</strong> sq.ft.</span><span>Floor <strong>14</strong></span></div>
+    <div class="pcard-foot">
+      <div class="pcard-price"><small>Price Expected</small>₹2.4 Cr</div>
+      <span class="pcard-cta">Details</span>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"><style>
+  .field { display:flex;flex-direction:column;gap:6px; }
+  .field-label { font-family:var(--font-display);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ca-coral); }
+  .field-input { background:#fff;border:1px solid var(--border-2);border-radius:4px;padding:10px 14px;font-family:var(--font-body);font-size:14px;color:var(--fg-1);outline:none; }
+  .field-input:focus { border-color:var(--ca-coral);box-shadow:var(--shadow-focus); }
+  .field-input.focused { border-color:var(--ca-coral);box-shadow:var(--shadow-focus); }
+  .field-help { font-family:var(--font-body);font-size:12px;color:var(--fg-3); }
+</style></head><body>
+<div class="col" style="gap:14px;">
+  <span class="t-caption" style="color:var(--fg-3);text-transform:uppercase;letter-spacing:.12em;">Form inputs — rest · focus · select</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+    <div class="field">
+      <label class="field-label">Full Name</label>
+      <input class="field-input" placeholder="Aarav Kapoor" />
+      <span class="field-help">As per ID</span>
+    </div>
+    <div class="field">
+      <label class="field-label">Contact Number</label>
+      <input class="field-input focused" value="+91 80 4000 5000" />
+      <span class="field-help">Focused state</span>
+    </div>
+    <div class="field">
+      <label class="field-label">Property Type</label>
+      <select class="field-input"><option>Rentals Only</option><option>Resales Only</option></select>
+      <span class="field-help">Native select</span>
+    </div>
+  </div>
+</div>
+</body></html>
